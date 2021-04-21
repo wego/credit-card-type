@@ -1,4 +1,4 @@
-import creditCardType = require("../index");
+import creditCardType from "../index";
 
 describe("creditCardType", () => {
   it.each([

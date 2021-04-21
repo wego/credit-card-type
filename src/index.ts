@@ -1,4 +1,4 @@
-import cardTypes = require("./lib/card-types");
+import cardTypes from "./lib/card-types";
 import { addMatchingCardsToResults } from "./lib/add-matching-cards-to-results";
 import { isValidInputType } from "./lib/is-valid-input-type";
 import { findBestMatch } from "./lib/find-best-match";
@@ -150,4 +150,4 @@ creditCardType.resetModifications = (): void => {
 
 creditCardType.types = cardNames;
 
-export = creditCardType;
+export default creditCardType;
