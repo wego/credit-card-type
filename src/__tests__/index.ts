@@ -47,11 +47,11 @@ describe("creditCardType", () => {
     ["272", "mastercard"],
     ["2720", "mastercard"],
 
-    ["51", "mastercard"],
-    ["52", "mastercard"],
-    ["53", "mastercard"],
-    ["54", "mastercard"],
-    ["55", "mastercard"],
+    ["510", "mastercard"],
+    ["522", "mastercard"],
+    ["534", "mastercard"],
+    ["540", "mastercard"],
+    ["550", "mastercard"],
     ["5555555555554444", "mastercard"],
     ["5454545454545454", "mastercard"],
 
@@ -93,7 +93,7 @@ describe("creditCardType", () => {
 
     ["56", "maestro"],
     ["57", "maestro"],
-    ["58", "maestro"],
+    ["580", "maestro"],
     ["59", "maestro"],
     ["67", "maestro"],
     ["6304000000000000", "maestro"],
@@ -148,6 +148,10 @@ describe("creditCardType", () => {
     ["637568", "hiper"],
     ["63737423", "hiper"],
     ["63743358", "hiper"],
+
+    ["407197", "mada"],
+    ["513213", "mada"],
+    ["554180", "mada"],
   ])("Matches %s to brand %s", (number, cardType) => {
     const actual = creditCardType(number);
 
@@ -176,21 +180,25 @@ describe("creditCardType", () => {
         "mir",
         "hiper",
         "hipercard",
+        "mada",
       ],
     ],
     ["2", ["mastercard", "jcb", "mir"]],
     ["3", ["american-express", "diners-club", "jcb"]],
-    ["5", ["mastercard", "maestro", "elo"]],
-    ["50", ["maestro", "elo"]],
-    ["6", ["discover", "unionpay", "maestro", "elo", "hiper", "hipercard"]],
-    ["60", ["discover", "maestro", "hipercard"]],
+    ["5", ["mastercard", "maestro", "elo", "mada"]],
+    ["50", ["maestro", "elo", "mada"]],
+    [
+      "6",
+      ["discover", "unionpay", "maestro", "elo", "hiper", "hipercard", "mada"],
+    ],
+    ["60", ["discover", "maestro", "hipercard", "mada"]],
     ["601", ["discover", "maestro"]],
     ["64", ["discover", "maestro"]],
     ["62", ["unionpay", "maestro", "elo"]],
 
-    ["4", ["visa", "maestro", "elo"]],
-    ["43", ["visa", "elo"]],
-    ["431", ["visa", "elo"]],
+    ["4", ["visa", "maestro", "elo", "mada"]],
+    ["43", ["visa", "elo", "mada"]],
+    ["431", ["visa", "elo", "mada"]],
     ["4312", ["visa", "elo"]],
     ["43127", ["visa", "elo"]],
     ["45141", ["visa", "elo"]],
@@ -202,8 +210,8 @@ describe("creditCardType", () => {
     ["6277", ["unionpay", "maestro", "elo"]],
     ["62778", ["unionpay", "maestro", "elo"]],
 
-    ["63", ["maestro", "elo", "hiper"]],
-    ["636", ["maestro", "elo"]],
+    ["63", ["maestro", "elo", "hiper", "mada"]],
+    ["636", ["maestro", "elo", "mada"]],
     ["6362", ["maestro", "elo"]],
     ["63629", ["maestro", "elo"]],
 
@@ -244,7 +252,7 @@ describe("creditCardType", () => {
     "32",
     "33",
     "7",
-    "9",
+    "90",
   ])("returns an empty array for %s", (unknown) => {
     expect(creditCardType(unknown)).toHaveLength(0);
   });
