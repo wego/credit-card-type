@@ -200,6 +200,7 @@ const cardTypes: CardCollection = {
     patterns: [
       400861,
       401757,
+      406996,
       407197,
       407395,
       409201,
@@ -228,6 +229,7 @@ const cardTypes: CardCollection = {
       455036,
       455708,
       457865,
+      457997,
       458456,
       462220,
       468540,
