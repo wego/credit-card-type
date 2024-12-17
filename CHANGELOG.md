@@ -1,3 +1,23 @@
+# 10.0.2
+
+- Update (sub-)dependencies
+  - `cross-spawn` to 7.0.6
+  - `micromatch` to 4.0.8
+  - `semver` to 6.3.1
+
+# 10.0.1
+
+- Update `braces` to 3.0.3
+
+# 10.0.0
+
+- BREAKING CHANGES
+  - Update Node to v18
+  - DevDependencies
+    - Update prettier to v3
+    - Update eslint-plugin-prettier to v5
+    - Typescript to v5
+
 # 9.1.0
 
 - Add additional Hiper bins (#115 thanks @upigilam)
